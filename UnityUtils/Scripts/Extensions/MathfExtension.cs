@@ -2,24 +2,31 @@
 using Unity.Mathematics;
 #endif
 
-namespace UnityUtils {
-    public static class MathfExtension {
+namespace UnityUtils
+{
+    public static class MathfExtension
+    {
         #region Min
 
 #if ENABLED_UNITY_MATHEMATICS
-        public static half Min(half a, half b) {
+        public static half Min(half a, half b)
+        {
             return (a < b) ? a : b;
         }
 
-        public static half Min(params half[] values) {
+        public static half Min(params half[] values)
+        {
             int num = values.Length;
-            if (num == 0) {
-                return (half) 0;
+            if (num == 0)
+            {
+                return (half)0;
             }
 
             half num2 = values[0];
-            for (int i = 1; i < num; i++) {
-                if (values[i] < num2) {
+            for (int i = 1; i < num; i++)
+            {
+                if (values[i] < num2)
+                {
                     num2 = values[i];
                 }
             }
@@ -28,19 +35,24 @@ namespace UnityUtils {
         }
 #endif
 
-        public static double Min(double a, double b) {
+        public static double Min(double a, double b)
+        {
             return (a < b) ? a : b;
         }
 
-        public static double Min(params double[] values) {
+        public static double Min(params double[] values)
+        {
             int num = values.Length;
-            if (num == 0) {
+            if (num == 0)
+            {
                 return 0f;
             }
 
             double num2 = values[0];
-            for (int i = 1; i < num; i++) {
-                if (values[i] < num2) {
+            for (int i = 1; i < num; i++)
+            {
+                if (values[i] < num2)
+                {
                     num2 = values[i];
                 }
             }
@@ -53,19 +65,24 @@ namespace UnityUtils {
         #region Max
 
 #if ENABLED_UNITY_MATHEMATICS
-        public static half Max(half a, half b) {
+        public static half Max(half a, half b)
+        {
             return (a > b) ? a : b;
         }
 
-        public static half Max(params half[] values) {
+        public static half Max(params half[] values)
+        {
             int num = values.Length;
-            if (num == 0) {
-                return (half) 0;
+            if (num == 0)
+            {
+                return (half)0;
             }
 
             half num2 = values[0];
-            for (int i = 1; i < num; i++) {
-                if (values[i] > num2) {
+            for (int i = 1; i < num; i++)
+            {
+                if (values[i] > num2)
+                {
                     num2 = values[i];
                 }
             }
@@ -74,19 +91,24 @@ namespace UnityUtils {
         }
 #endif
 
-        public static double Max(double a, double b) {
+        public static double Max(double a, double b)
+        {
             return (a > b) ? a : b;
         }
 
-        public static double Max(params double[] values) {
+        public static double Max(params double[] values)
+        {
             int num = values.Length;
-            if (num == 0) {
+            if (num == 0)
+            {
                 return 0f;
             }
 
             double num2 = values[0];
-            for (int i = 1; i < num; i++) {
-                if (values[i] > num2) {
+            for (int i = 1; i < num; i++)
+            {
+                if (values[i] > num2)
+                {
                     num2 = values[i];
                 }
             }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace UnityUtils {
-    public static class ListExtensions {
+namespace UnityUtils
+{
+    public static class ListExtensions
+    {
         static Random rng;
-        
+
         /// <summary>
         /// Determines whether a collection is null or has no elements
         /// without having to enumerate the entire collection to get a count.
@@ -14,7 +16,8 @@ namespace UnityUtils {
         /// so there is some GC overhead.
         /// </summary>
         /// <param name="list">List to evaluate</param>
-        public static bool IsNullOrEmpty<T>(this IList<T> list) {
+        public static bool IsNullOrEmpty<T>(this IList<T> list)
+        {
             return list == null || !list.Any();
         }
 
@@ -23,9 +26,11 @@ namespace UnityUtils {
         /// </summary>
         /// <param name="list">The original list to be copied.</param>
         /// <returns>A new list that is a copy of the original list.</returns>
-        public static List<T> Clone<T>(this IList<T> list) {
+        public static List<T> Clone<T>(this IList<T> list)
+        {
             List<T> newList = new List<T>();
-            foreach (T item in list) {
+            foreach (T item in list)
+            {
                 newList.Add(item);
             }
 
@@ -38,7 +43,8 @@ namespace UnityUtils {
         /// <param name="list">The list.</param>
         /// <param name="indexA">The index of the first element.</param>
         /// <param name="indexB">The index of the second element.</param>
-        public static void Swap<T>(this IList<T> list, int indexA, int indexB) {
+        public static void Swap<T>(this IList<T> list, int indexA, int indexB)
+        {
             (list[indexA], list[indexB]) = (list[indexB], list[indexA]);
         }
 
@@ -50,10 +56,13 @@ namespace UnityUtils {
         /// <param name="list">The list to be shuffled.</param>
         /// <typeparam name="T">The type of the elements in the list.</typeparam>
         /// <returns>The shuffled list.</returns>
-        public static IList<T> Shuffle<T>(this IList<T> list) {
-            if (rng == null) rng = new Random();
+        public static IList<T> Shuffle<T>(this IList<T> list)
+        {
+            if (rng == null)
+                rng = new Random();
             int count = list.Count;
-            while (count > 1) {
+            while (count > 1)
+            {
                 --count;
                 int index = rng.Next(count + 1);
                 (list[index], list[count]) = (list[count], list[index]);
@@ -68,10 +77,13 @@ namespace UnityUtils {
         /// <param name="source">The collection to filter.</param>
         /// <param name="predicate">The condition that each element is tested against.</param>
         /// <returns>A new list containing elements that satisfy the predicate.</returns>
-        public static IList<T> Filter<T>(this IList<T> source, Predicate<T> predicate) {
+        public static IList<T> Filter<T>(this IList<T> source, Predicate<T> predicate)
+        {
             List<T> list = new List<T>();
-            foreach (T item in source) {
-                if (predicate(item)) {
+            foreach (T item in source)
+            {
+                if (predicate(item))
+                {
                     list.Add(item);
                 }
             }

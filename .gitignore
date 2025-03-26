@@ -76,5 +76,7 @@ crashlytics-build.properties
 Assets/SceneDependencyCache*
 Assets/NetCodeGenerated*
 .idea/
+.config/
+*.csproj
 .DS_Store
 RiderScriptEditorPersistedState.asset
